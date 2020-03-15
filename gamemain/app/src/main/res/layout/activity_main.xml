@@ -17,9 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/title_01"
-        tools:layout_conversion_absoluteHeight="157dp"
-        tools:layout_conversion_absoluteWidth="342dp" />
+        android:src="@drawable/title_01" />
 
     <Button
         android:id="@+id/btnStart"
