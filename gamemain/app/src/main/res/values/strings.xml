@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">タップでトントン相撲！</string>
+
+    <string name="btn_start">ゲームスタート</string>
+    <string name="btn_re_start">もう一度挑戦する</string>
+    <string name="btn_pause">一時停止中</string>
+    <string name="btn_status">これまでの戦績</string>
+    <string name="btn_config">ゲームのあそび方</string>
+    <string name="btn_return">トップへ戻る</string>
+    <string name="switch_sound">音量</string>
+    <string name="btn_howtouse">遊び方</string>
+    <string name="how_to_use">トップ画面の「ゲームスタート」をタップすると、ゲーム画面に遷移します。ゲーム画面のカウントダウンが消えたら、ゲーム開始です。土俵の猫をタップする事で勝敗が決まります。「そこまで！」と表示されるまで、たくさんタップして下さい。</string>
+</resources>
