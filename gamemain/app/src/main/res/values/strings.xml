@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">タップでトントン相撲！</string>
+    <string name="app_name">タップでトントン相撲</string>
 
     <string name="btn_start">ゲームスタート</string>
     <string name="btn_re_start">もう一度挑戦する</string>

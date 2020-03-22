@@ -2,11 +2,13 @@ package com.example.tontonsumogame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * 遊び方の画面
+ */
 public class HowToActivity extends AppCompatActivity {
 
     private Button btnReturn; // トップへ戻るボタン

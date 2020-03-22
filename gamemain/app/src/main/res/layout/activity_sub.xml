@@ -1,239 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_02"
+    android:background="@drawable/bg_xml_01"
     android:gravity="center_vertical"
     android:orientation="vertical"
     tools:context=".SubActivity">
 
-
-    <FrameLayout
-        android:id="@+id/frameLayout1"
+    <!-- タップエリア 画面垂直位置に表示 -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center">
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-        <!-- タップエリア 画面垂直位置に表示 -->
-        <LinearLayout
-            android:id="@+id/imgDohyouBlock"
+        <ImageView
+            android:id="@+id/imgDohyou"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/dohyou_01" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imgDohyou"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/dohyou_01" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/tapAreaBlock"
+        <ImageView
+            android:id="@+id/imgTapArea"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/fighter_01" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imgTapArea"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/fighter_01" />
-        </LinearLayout>
+    <!-- ほこりの表示エリア 画面垂直位置に表示 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-        <!-- ほこりの表示エリア 画面垂直位置に表示 -->
-        <LinearLayout
-            android:id="@+id/hokoriBlock01"
+        <ImageView
+            android:id="@+id/imgHokori01"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:srcCompat="@drawable/hokori_01" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imgHokori01"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                app:srcCompat="@drawable/hokori_01" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/hokoriBlock02"
+        <ImageView
+            android:id="@+id/imgHokori02"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:srcCompat="@drawable/hokori_02" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imgHokori02"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                app:srcCompat="@drawable/hokori_02" />
-        </LinearLayout>
+    <!-- のこったセリフ表示エリア 画面垂直位置に表示 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-        <!-- のこったセリフ表示エリア 画面垂直位置に表示 -->
-        <LinearLayout
-            android:id="@+id/nokottaBlock01"
+        <ImageView
+            android:id="@+id/imgNokotta01"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:srcCompat="@drawable/nokotta_01" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imgNokotta01"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                app:srcCompat="@drawable/nokotta_01" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/nokottaBlock02"
+        <ImageView
+            android:id="@+id/imgNokotta02"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:srcCompat="@drawable/nokotta_02" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imgNokotta02"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                app:srcCompat="@drawable/nokotta_02" />
-        </LinearLayout>
+    <!-- 前画面画像エリア 画面垂直位置に表示 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-        <!-- 技の表示エリア 画面垂直位置に表示 -->
-        <LinearLayout
-            android:id="@+id/overViewBlock03"
+        <ImageView
+            android:id="@+id/imgOverView01"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:srcCompat="@drawable/result_02" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imgOverView03"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                app:srcCompat="@drawable/skill_01" />
-        </LinearLayout>
+    <!-- 前画面画像エリア 画面垂直位置に表示 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-        <!-- 技のアニメーション表示エリア 画面垂直位置に表示 -->
-        <LinearLayout
-            android:id="@+id/overViewBlock04"
+        <ImageView
+            android:id="@+id/imgOverView02"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:srcCompat="@drawable/roose_01" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imgOverView04"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                app:srcCompat="@drawable/skill_cat_01" />
-        </LinearLayout>
+    <!-- 前画面画像エリア 画面垂直位置に表示 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-        <!-- 勝敗結果エリア 画面垂直位置に表示 -->
-        <LinearLayout
-            android:id="@+id/overViewBlock01"
+        <ImageView
+            android:id="@+id/imgOverView03"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:srcCompat="@drawable/skill_01" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imgOverView01"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                app:srcCompat="@drawable/result_01" />
-        </LinearLayout>
+    <!-- 前画面画像エリア 画面垂直位置に表示 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-        <!-- 勝敗結果のアニメーションエリア 画面垂直位置に表示 -->
-        <LinearLayout
-            android:id="@+id/overViewBlock02"
+        <ImageView
+            android:id="@+id/imgOverView04"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:srcCompat="@drawable/skill_cat_01" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imgOverView02"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                app:srcCompat="@drawable/roose_01" />
-        </LinearLayout>
+    <!-- カウントダウンエリア 画面垂直位置に表示 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-        <!-- カウントダウンエリア 画面垂直位置に表示 -->
-        <LinearLayout
-            android:id="@+id/countDownBlock"
+        <ImageView
+            android:id="@+id/imgCountDown"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="カウントダウン"
+            android:visibility="gone"
+            app:srcCompat="@drawable/num_04" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imgCountDown"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:contentDescription="カウントダウン"
-                android:visibility="gone"
-                app:srcCompat="@drawable/num_04" />
-        </LinearLayout>
 
-        <!-- ボタンエリア -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/btnBlock01"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <!-- ボタンエリア -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnReturn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/btn_05"
-                android:contentDescription="@string/btn_return"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_conversion_absoluteHeight="61dp"
-                tools:layout_conversion_absoluteWidth="246dp" />
+        <Button
+            android:id="@+id/btnReStart"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/btn_04"
+            android:contentDescription="@string/btn_re_start"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/btnReturn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_conversion_absoluteHeight="61dp"
+            tools:layout_conversion_absoluteWidth="246dp" />
 
-            <Button
-                android:id="@+id/btnReStart"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/btn_04"
-                android:contentDescription="@string/btn_re_start"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_conversion_absoluteHeight="61dp"
-                tools:layout_conversion_absoluteWidth="246dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btnReturn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_05"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/btn_return"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_conversion_absoluteHeight="61dp"
+            tools:layout_conversion_absoluteWidth="246dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </FrameLayout>
+    <!-- BGMボタン -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/btnVolume"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="74dp"
+            android:layout_height="34dp"
+            android:background="@drawable/btn_on"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:contentDescription="@string/switch_sound"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

@@ -15,14 +15,14 @@ public class TimeProcessing {
         return nowTime;
     }
 
-    // 終了時刻を返す（加算時間）
-    public Date endTime(Date nowTime, int plusTime) {
+    // 開始時刻から計算した終了時刻を返す（加算時間）
+    public Date resultTime(Date nowTime, int plusTime) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(nowTime);
         calendar.add(Calendar.MILLISECOND, plusTime); // plusTimeミリ秒後
-        Date endTime = calendar.getTime();
+        Date resultTime = calendar.getTime();
 
-        return endTime;
+        return resultTime;
     }
 
     // 開始時刻から現在時刻を引いて、経過時間を返す
