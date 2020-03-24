@@ -130,53 +130,53 @@
     </LinearLayout>
 
     <!-- 前画面画像エリア 画面垂直位置に表示 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="vertical">-->
 
-        <ImageView
-            android:id="@+id/imgOverView03"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="gone"
-            app:srcCompat="@drawable/skill_01" />
-    </LinearLayout>
+<!--        <ImageView-->
+<!--            android:id="@+id/imgOverView03"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:visibility="gone"-->
+<!--            app:srcCompat="@drawable/skill_01" />-->
+<!--    </LinearLayout>-->
 
     <!-- 前画面画像エリア 画面垂直位置に表示 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="vertical">-->
 
-        <ImageView
-            android:id="@+id/imgOverView04"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="gone"
-            app:srcCompat="@drawable/skill_cat_01" />
-    </LinearLayout>
+<!--        <ImageView-->
+<!--            android:id="@+id/imgOverView04"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:visibility="gone"-->
+<!--            app:srcCompat="@drawable/skill_cat_01" />-->
+<!--    </LinearLayout>-->
 
     <!-- カウントダウンエリア 画面垂直位置に表示 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="vertical">-->
 
-        <ImageView
-            android:id="@+id/imgCountDown"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:contentDescription="カウントダウン"
-            android:visibility="gone"
-            app:srcCompat="@drawable/num_04" />
-    </LinearLayout>
+<!--        <ImageView-->
+<!--            android:id="@+id/imgCountDown"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:contentDescription="カウントダウン"-->
+<!--            android:visibility="gone"-->
+<!--            app:srcCompat="@drawable/num_04" />-->
+<!--    </LinearLayout>-->
 
 
     <!-- ボタンエリア -->

@@ -2,12 +2,16 @@ package com.example.tontonsumogame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -40,12 +44,13 @@ public class SubActivity extends AppCompatActivity {
     private final Handler timerHandler = new Handler(); // タイマー処理をするクラス
 
     // カウントダウンアニメーション用
-    private Runnable countDownRunnable; // カウントダウンのRunnable
+//    private Runnable countDownRunnable; // カウントダウンのRunnable
+    private boolean reStart = false;
     private Runnable countDownRunnable04;
     private Runnable countDownRunnable03;
     private Runnable countDownRunnable02;
     private Runnable countDownRunnable01;
-    private ImageView imgCountDown; // カウントダウン画像
+//    private ImageView imgCountDown; // カウントダウン画像
     private boolean countDownHide; // カウントダウンを非表示判定
     private int[] countTime = {1000, 2000, 3000, 4000, 4750}; // 秒数を決めておく
     private AlphaAnimation cdFadeOut = new AlphaAnimation(1, 0); // フェードアウト
@@ -82,9 +87,9 @@ public class SubActivity extends AppCompatActivity {
     private int tapNum; //　タップ回数
     private int totalResult; //　トータル点数
     private int pointNum = 10; //　ポイント点数
-    private int bonusLine = 10; // ボーナス付与回数
+    private int bonusLine = 20; // ボーナス付与回数
     private int bonusNum = 30; // ボーナス点数
-    private int passLine = 500; // クリアライン点数
+    private int passLine = 800; // クリアライン点数
     private boolean firstPass = true; // 最初にクリアラインを超えたか
     private boolean gameResult; // 勝敗結果
 
@@ -183,10 +188,7 @@ public class SubActivity extends AppCompatActivity {
         });
 
         // カウントダウンアニメーション
-        imgCountDown = findViewById(R.id.imgCountDown);
-
-        cdFadeOut.setDuration(1000);
-        cdFadeOut.setFillAfter(true);
+//        imgCountDown = findViewById(R.id.imgCountDown);
 //        countDownRunnable = new Runnable() {
 //            @Override
 //            public void run() {
@@ -196,38 +198,45 @@ public class SubActivity extends AppCompatActivity {
         countDownRunnable04 = new Runnable() {
             @Override
             public void run() {
-                imgCountDown.setImageDrawable(overViewImages.get("カウントダウン4"));
-                imgCountDown.setVisibility(View.VISIBLE);
-                imgCountDown.startAnimation(cdFadeOut);
+                imgOverView01.setImageDrawable(overViewImages.get("カウントダウン4"));
+                imgOverView01.setVisibility(View.VISIBLE);
+                cdFadeOut.setDuration(1000);
+                cdFadeOut.setFillAfter(false);
+                imgOverView01.startAnimation(cdFadeOut);
             }
         };
         countDownRunnable03 = new Runnable() {
             @Override
             public void run() {
-                imgCountDown.setImageDrawable(overViewImages.get("カウントダウン3"));
-                imgCountDown.startAnimation(cdFadeOut);
+                imgOverView01.setImageDrawable(overViewImages.get("カウントダウン3"));
+                imgOverView01.setVisibility(View.VISIBLE);
+                cdFadeOut.setDuration(1000);
+                cdFadeOut.setFillAfter(false);
+                imgOverView01.startAnimation(cdFadeOut);
             }
         };
         countDownRunnable02 = new Runnable() {
             @Override
             public void run() {
-                imgCountDown.setImageDrawable(overViewImages.get("カウントダウン2"));
-                imgCountDown.startAnimation(cdFadeOut);
+                imgOverView01.setImageDrawable(overViewImages.get("カウントダウン2"));
+                imgOverView01.setVisibility(View.VISIBLE);
+                cdFadeOut.setDuration(1000);
+                cdFadeOut.setFillAfter(false);
+                imgOverView01.startAnimation(cdFadeOut);
             }
         };
         countDownRunnable01 = new Runnable() {
             @Override
             public void run() {
-                imgCountDown.setImageDrawable(overViewImages.get("カウントダウン1"));
-                Log.i("TapMemo", "countDownRunnableが実行された！！！！！！！");
-                imgCountDown.startAnimation(cdFadeOut);
+                imgOverView01.setImageDrawable(overViewImages.get("カウントダウン1"));
+                imgOverView01.setVisibility(View.VISIBLE);
             }
         };
         gameStartRunnable = new Runnable() {
             @Override
             public void run() {
                 gameStart();
-                imgCountDown.setVisibility(View.INVISIBLE);
+                imgOverView01.setVisibility(View.INVISIBLE);
             }
         };
 //        timerHandler.post(countDownRunnable);
@@ -260,31 +269,38 @@ public class SubActivity extends AppCompatActivity {
 //        Runnable countDownRunnable04 = new Runnable() {
 //            @Override
 //            public void run() {
-//                imgCountDown.setImageDrawable(overViewImages.get("カウントダウン4"));
-//                imgCountDown.setVisibility(View.VISIBLE);
-//                imgCountDown.startAnimation(cdFadeOut);
+//                imgOverView01.setImageDrawable(overViewImages.get("カウントダウン4"));
+//                imgOverView01.setVisibility(View.VISIBLE);
+//                cdFadeOut.setDuration(1000);
+//                cdFadeOut.setFillAfter(false);
+//                imgOverView01.startAnimation(cdFadeOut);
 //            }
 //        };
 //        Runnable countDownRunnable03 = new Runnable() {
 //            @Override
 //            public void run() {
-//                imgCountDown.setImageDrawable(overViewImages.get("カウントダウン3"));
-//                imgCountDown.startAnimation(cdFadeOut);
+//                imgOverView01.setImageDrawable(overViewImages.get("カウントダウン3"));
+//                imgOverView01.setVisibility(View.VISIBLE);
+//                cdFadeOut.setDuration(1000);
+//                cdFadeOut.setFillAfter(false);
+//                imgOverView01.startAnimation(cdFadeOut);
 //            }
 //        };
 //        Runnable countDownRunnable02 = new Runnable() {
 //            @Override
 //            public void run() {
-//                imgCountDown.setImageDrawable(overViewImages.get("カウントダウン2"));
-//                imgCountDown.startAnimation(cdFadeOut);
+//                imgOverView01.setImageDrawable(overViewImages.get("カウントダウン2"));
+//                imgOverView01.setVisibility(View.VISIBLE);
+//                cdFadeOut.setDuration(1000);
+//                cdFadeOut.setFillAfter(false);
+//                imgOverView01.startAnimation(cdFadeOut);
 //            }
 //        };
 //        Runnable countDownRunnable01 = new Runnable() {
 //            @Override
 //            public void run() {
-//                imgCountDown.setImageDrawable(overViewImages.get("カウントダウン1"));
-//                Log.i("TapMemo", "countDownRunnableが実行された！！！！！！！");
-//                imgCountDown.startAnimation(cdFadeOut);
+//                imgOverView01.setImageDrawable(overViewImages.get("カウントダウン1"));
+//                imgOverView01.setVisibility(View.VISIBLE);
 //            }
 //        };
 //        timerHandler.postDelayed(countDownRunnable04, num1);
@@ -293,6 +309,12 @@ public class SubActivity extends AppCompatActivity {
 //        timerHandler.postDelayed(countDownRunnable01, num4);
 //    }
 
+    /**
+     * 画面新規表示時メソッド
+     */
+    public void onStart() {
+        super.onStart();
+    }
 
     /**
      * 画面表示時メソッド
@@ -304,6 +326,11 @@ public class SubActivity extends AppCompatActivity {
             btnVolume.setBackground(btnVolumeImages.get("on"));
         } else {
             btnVolume.setBackground(btnVolumeImages.get("off"));
+        }
+
+        if(reStart){
+            imgOverView01.setImageDrawable(overViewImages.get("一時停止"));
+            imgOverView01.setVisibility(View.VISIBLE);
         }
     }
 
@@ -334,7 +361,13 @@ public class SubActivity extends AppCompatActivity {
             time = (int) (time - timeDiff); // 残り時間から経過時間を引く
         }
 
-        // 各ボタンの表示
+        nowOnTime = false;
+        reStart = true;
+
+        // 一時停止時の画面表示セット
+        imgOverView01.setImageDrawable(null);
+        imgOverView02.setVisibility(View.INVISIBLE);
+//        imgCountDown.setVisibility(View.INVISIBLE);
         btnReStart.setVisibility(View.VISIBLE);
         btnReStart.setEnabled(true);
         btnReturn.setVisibility(View.VISIBLE);
@@ -358,7 +391,7 @@ public class SubActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
         if (startTime == null) {
-            /* 開始前〜カウントダウン途中の場合（終了までの秒数：MAX）
+            /* 開始前〜カウントダウン途中の場合（終了までの残り時間がMAX）
              * [各値の状態]
              * カウントダウン非表示：false
              * タップ可能時間内：false
@@ -455,17 +488,16 @@ public class SubActivity extends AppCompatActivity {
         firstPass = savedInstanceState.getBoolean("firstPass");
         volumeStatus = savedInstanceState.getBoolean("volumeStatus");
 
-        // 各ボタンの表示
+        nowOnTime = false;
+        reStart = true;
+
+        // 一時停止時の画面表示セット
+        imgOverView02.setVisibility(View.INVISIBLE);
+//        imgCountDown.setVisibility(View.INVISIBLE);
         btnReStart.setVisibility(View.VISIBLE);
         btnReStart.setEnabled(true);
         btnReturn.setVisibility(View.VISIBLE);
         btnReturn.setEnabled(true);
-
-        imgOverView01.setImageDrawable(overViewImages.get("一時停止"));
-        imgOverView01.setVisibility(View.VISIBLE);
-        imgOverView02.setVisibility(View.INVISIBLE);
-        imgCountDown.setVisibility(View.INVISIBLE);
-        cdFadeOut.cancel();
     }
 
 
@@ -623,6 +655,8 @@ public class SubActivity extends AppCompatActivity {
         timerHandler.removeCallbacks(fighterMoveRunnable);
         timerHandler.removeCallbacks(bonusRunnable);
 
+        imgOverView02.setImageDrawable(null);
+
         imgOverView01.setImageDrawable(overViewImages.get("そこまで"));
         imgOverView01.setVisibility(View.VISIBLE);
 
@@ -641,11 +675,12 @@ public class SubActivity extends AppCompatActivity {
                     imgOverView01.setImageDrawable(overViewImages.get("黒星"));
                     imgOverView02.setImageDrawable(overViewImages.get("倒れる"));
                     imgOverView02.setVisibility(View.VISIBLE);
-                    setFadeOutAnim.setDuration(3000);
+                    setFadeOutAnim.setDuration(4000);
+                    setFadeOutAnim.setFillAfter(true);
                     setScaleAnim.setDuration(4000);
+                    setScaleAnim.setFillAfter(true);
                     setAnimRoose.addAnimation(setFadeOutAnim);
                     setAnimRoose.addAnimation(setScaleAnim);
-                    setAnimRoose.setFillAfter(true);
                     imgOverView02.startAnimation(setAnimRoose);
 
                     Log.i("TapMemo", "終了時刻です。あなたの負けです。" +
@@ -722,18 +757,14 @@ public class SubActivity extends AppCompatActivity {
                 imgOverView02.setImageDrawable(overViewImages.get("目から星"));
                 imgOverView01.setVisibility(View.VISIBLE);
                 imgOverView02.setVisibility(View.VISIBLE);
-
                 translateBonusAnim.setDuration(500);
-                bonusFadeOutAnim.setDuration(200);
-                setBonusAnim.addAnimation(translateBonusAnim);
-                imgOverView02.startAnimation(setBonusAnim);
-
+                translateBonusAnim.setFillAfter(false);
+                imgOverView02.startAnimation(translateBonusAnim);
                 bonusRunnable = new Runnable() {
                     @Override
                     public void run() {
                         imgOverView01.setVisibility(View.INVISIBLE);
                         imgOverView02.setVisibility(View.INVISIBLE);
-                        imgOverView02.startAnimation(bonusFadeOutAnim);
                     }
                 };
                 timerHandler.postDelayed(bonusRunnable, 700);
@@ -745,18 +776,14 @@ public class SubActivity extends AppCompatActivity {
                 imgOverView02.setImageDrawable(overViewImages.get("目から炎"));
                 imgOverView01.setVisibility(View.VISIBLE);
                 imgOverView02.setVisibility(View.VISIBLE);
-
                 translateBonusAnim.setDuration(500);
-                bonusFadeOutAnim.setDuration(200);
-                setBonusAnim.addAnimation(translateBonusAnim);
-                imgOverView02.startAnimation(setBonusAnim);
-
+                translateBonusAnim.setFillAfter(false);
+                imgOverView02.startAnimation(translateBonusAnim);
                 bonusRunnable = new Runnable() {
                     @Override
                     public void run() {
                         imgOverView01.setVisibility(View.INVISIBLE);
                         imgOverView02.setVisibility(View.INVISIBLE);
-                        imgOverView02.startAnimation(bonusFadeOutAnim);
                     }
                 };
                 timerHandler.postDelayed(bonusRunnable, 1200);
@@ -788,6 +815,33 @@ public class SubActivity extends AppCompatActivity {
 
 
     /**
+     * 端末の戻るボタンを押した時のメソッド
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            // 全てのRunnableとBGMを停止
+//        timerHandler.removeCallbacks(countDownRunnable);
+            timerHandler.removeCallbacks(countDownRunnable04);
+            timerHandler.removeCallbacks(countDownRunnable03);
+            timerHandler.removeCallbacks(countDownRunnable02);
+            timerHandler.removeCallbacks(countDownRunnable01);
+            timerHandler.removeCallbacks(gameStartRunnable);
+            timerHandler.removeCallbacks(gameEndRunnable);
+            timerHandler.removeCallbacks(buttonRunnable);
+            timerHandler.removeCallbacks(hokoriRunnable);
+            timerHandler.removeCallbacks(fighterMoveRunnable);
+            bgm.onStop();
+
+            Intent intent = new Intent();
+            intent.putExtra("volumeStatus", volumeStatus);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+        return false;
+    }
+
+    /**
      * トップへ戻るボタンを押した時のメソッド
      */
     public void onBtnReturnClick() {
@@ -803,6 +857,10 @@ public class SubActivity extends AppCompatActivity {
         timerHandler.removeCallbacks(hokoriRunnable);
         timerHandler.removeCallbacks(fighterMoveRunnable);
         bgm.onStop();
+
+        Intent intent = new Intent();
+        intent.putExtra("volumeStatus", volumeStatus);
+        setResult(RESULT_OK, intent);
         finish();
     }
 }

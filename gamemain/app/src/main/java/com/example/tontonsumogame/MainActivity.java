@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     // フィールド変数
     private Button btnStart, btnHowTo; // ゲームスタートボタン、遊び方へボタン
 
+    private static final int REQUESTCODE_GAME = 1; // ゲーム画面のリクエストコード
+
     private BackGroundMusic bgm = new BackGroundMusic(); // BGMクラス
     private ImageView btnVolume; // 音量ボタン
     private boolean volumeStatus = true; // 音量の状態を格納
@@ -107,6 +109,18 @@ public class MainActivity extends AppCompatActivity {
         animationSet01.setFillAfter(true);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case REQUESTCODE_GAME:
+                if (RESULT_OK == resultCode) {
+                    Intent intent = getIntent();
+                    volumeStatus = intent.getBooleanExtra("volumeStatus", volumeStatus);
+                }
+                break;
+        }
+    }
+
     /**
      * 画面表示時メソッド
      */
@@ -180,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBtnStartClick() {
         Intent intent = new Intent(getApplication(), SubActivity.class);
         intent.putExtra("volumeStatus", volumeStatus);
-        startActivity(intent);
+        startActivityForResult(intent, REQUESTCODE_GAME);
     }
 
     /**

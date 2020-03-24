@@ -1,6 +1,7 @@
 package com.example.tontonsumogame;
 
 import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.util.Log;
 
@@ -14,7 +15,7 @@ public class BackGroundMusic {
     public void onCreate(Context context){
         bgmMediaPlayer = MediaPlayer.create(context, R.raw.audio_01);
         bgmMediaPlayer.setLooping(true);
-        bgmMediaPlayer.setVolume(1f,1f);
+        bgmMediaPlayer.setVolume(0.2f,0.2f);
     }
 
     public void onStart(){
