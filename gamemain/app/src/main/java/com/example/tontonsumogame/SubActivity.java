@@ -2,8 +2,6 @@ package com.example.tontonsumogame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.animation.AnimatorInflater;
-import android.animation.AnimatorSet;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -11,7 +9,6 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;

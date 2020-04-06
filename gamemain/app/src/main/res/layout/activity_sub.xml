@@ -18,8 +18,8 @@
 
         <ImageView
             android:id="@+id/imgDohyou"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:srcCompat="@drawable/dohyou_01" />
     </LinearLayout>
@@ -31,8 +31,8 @@
 
         <ImageView
             android:id="@+id/imgTapArea"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:srcCompat="@drawable/fighter_01" />
     </LinearLayout>
